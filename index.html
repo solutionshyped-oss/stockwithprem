@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#eaf1f8">
+<title>Stock With Prem | Official Telegram</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(145deg,#edf3f9,#dfe9f3);
+  font-family: Arial, sans-serif;
+  color: #101828;
+  padding: 24px 14px;
+}
+
+.container {
+  max-width: 560px;
+  margin: auto;
+}
+
+.card {
+  background: white;
+  border-radius: 40px;
+  padding: 42px 38px;
+  text-align: center;
+  box-shadow: 0 15px 45px rgba(0,0,0,.06);
+}
+
+.logo {
+  width: 245px;
+  height: 245px;
+  max-width: 80%;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 28px;
+  box-shadow: 0 0 0 5px #f4e8c7;
+}
+
+h1 {
+  color: #d8b13e;
+  font-size: 36px;
+  margin-bottom: 22px;
+  font-weight: 800;
+}
+
+.intro {
+  color: #59616c;
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 34px;
+}
+
+.countdown {
+  background: #eaf4ff;
+  border: 1px solid #a9d0f5;
+  border-radius: 20px;
+  padding: 18px;
+  margin-bottom: 26px;
+}
+
+.countline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #536170;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.timer {
+  color: #0872dc;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.track {
+  height: 10px;
+  background: #c8def5;
+  border-radius: 20px;
+  margin-top: 16px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  width: 100%;
+  background: #1685ed;
+  transition: width 1s linear;
+}
+
+.join-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  min-height: 98px;
+  padding: 18px;
+  background: linear-gradient(110deg,#0879e7,#54a7f1);
+  color: white;
+  text-decoration: none;
+  border-radius: 23px;
+  font-size: 28px;
+  font-weight: 800;
+  box-shadow: 0 13px 25px rgba(22,133,237,.25);
+}
+
+.telegram-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.22);
+  display: grid;
+  place-items: center;
+  font-size: 27px;
+}
+
+.features {
+  margin: 44px 0 28px;
+  text-align: left;
+  display: grid;
+  gap: 30px;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: 66px 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.check {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #d2f0dc;
+  color: #15945b;
+  display: grid;
+  place-items: center;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.feature h2 {
+  font-size: 23px;
+  margin: 3px 0 8px;
+  line-height: 1.25;
+}
+
+.feature p {
+  font-size: 19px;
+  line-height: 1.5;
+  color: #606a77;
+}
+
+.members {
+  font-size: 18px;
+  color: #5c6571;
+  line-height: 1.8;
+  margin: 28px 0;
+}
+
+.dots {
+  color: #1685ed;
+  font-size: 22px;
+}
+
+.redirect {
+  font-size: 20px;
+  color: #43a4d1;
+  margin: 25px 0 8px;
+}
+
+.redirect a {
+  color: #0872dc;
+  word-break: break-all;
+}
+
+.disclaimer {
+  font-size: 15px;
+  line-height: 1.55;
+  color: #69727e;
+  margin-top: 30px;
+}
+
+@media(max-width:480px) {
+  .card {
+    padding: 35px 22px;
+    border-radius: 34px;
+  }
+
+  .logo {
+    width: 220px;
+    height: 220px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .feature {
+    grid-template-columns: 58px 1fr;
+    gap: 17px;
+  }
+
+  .check {
+    width: 58px;
+    height: 58px;
+  }
+
+  .feature h2 {
+    font-size: 21px;
+  }
+
+  .feature p {
+    font-size: 17px;
+  }
+
+  .join-btn {
+    min-height: 88px;
+    font-size: 23px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+  <img src="logo.jpg" class="logo" alt="Stock With Prem Logo">
+
+  <h1>STOCK WITH PREM</h1>
+
+  <p class="intro">
+    Daily insights, beginner lessons, and live Q&amp;A
+    to help you invest smarter — 100% free
+  </p>
+
+  <div class="countdown">
+    <div class="countline">
+      <span>⌛ Opening Telegram in</span>
+      <span class="timer" id="timer">00:05</span>
+    </div>
+
+    <div class="track">
+      <div class="fill" id="progress"></div>
+    </div>
+  </div>
+
+  <a href="https://t.me/+-abFnzSEGdk2OTI1"
+     class="join-btn join-link">
+    <span class="telegram-icon">➤</span>
+    Join on Telegram
+  </a>
+
+  <div class="features">
+
+    <div class="feature">
+      <div class="check">✓</div>
+      <div>
+        <h2>Daily market insights &amp; trends</h2>
+        <p>Stay updated on market news, trends, and opportunities</p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="check">✓</div>
+      <div>
+        <h2>Beginner-friendly stock lessons</h2>
+        <p>Learn investing basics in simple, easy lessons</p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="check">✓</div>
+      <div>
+        <h2>Live Q&amp;A with analysts</h2>
+        <p>Ask questions and get answers during weekly live sessions</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="members">
+    <span class="dots">●●●</span>
+    <strong>12.4k+ members</strong>
+    &nbsp;·&nbsp; Free to join &nbsp;·&nbsp;
+    <br>
+    No spam, unsubscribe anytime
+  </div>
+
+  <a href="https://t.me/+-abFnzSEGdk2OTI1"
+     class="join-btn join-link">
+    <span class="telegram-icon">➤</span>
+    Join on Telegram
+  </a>
+
+  <div class="redirect">
+    Telegram redirect:
+    <br>
+    <a href="https://t.me/+-abFnzSEGdk2OTI1">
+      t.me/+-abFnzSEGdk2OTI1
+    </a>
+  </div>
+
+  <p class="disclaimer">
+    Telegram opens when you tap the button.
+    Meta Pixel tracking is not enabled in this file.
+  </p>
+
+</div>
+</div>
+
+<script>
+(function() {
+
+  const telegramURL = "https://t.me/+-abFnzSEGdk2OTI1";
+  const totalSeconds = 5;
+
+  let remaining = totalSeconds;
+
+  const timer = document.getElementById("timer");
+  const progress = document.getElementById("progress");
+
+  function countdown() {
+
+    timer.textContent =
+      "00:" + String(remaining).padStart(2,"0");
+
+    progress.style.width =
+      (remaining / totalSeconds * 100) + "%";
+
+    if (remaining <= 0) {
+      window.location.href = telegramURL;
+      return;
+    }
+
+    remaining--;
+
+    setTimeout(countdown, 1000);
+  }
+
+  countdown();
+
+})();
+</script>
+
+</body>
+</html>
